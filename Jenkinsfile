@@ -16,10 +16,11 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
+                dir('myproject') { 
                 sh 'docker build -t rahulapp  .'
             }
         }
-
+        }
         stage('Run with Docker Compose') {
             steps {
                 sh 'docker compose up -d --build'
