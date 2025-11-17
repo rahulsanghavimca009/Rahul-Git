@@ -10,13 +10,13 @@ pipeline {
 
         stage('Build App') {
             steps {
-                sh 'mvn -f pom.xml clean package -DskipTests'
+                sh 'mvn -f demo/pom.xml clean package -DskipTests'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t student1-app .'
+                sh 'docker build -t rahulapp  .'
             }
         }
 
